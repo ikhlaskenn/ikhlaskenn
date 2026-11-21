@@ -21,6 +21,10 @@ My experience spans **embedded systems**, **industrial automation concepts**, an
 - Sensors: temperature, IMU (MPU6050), analog & digital sensors
 - Motor drivers (L298N), differential drive systems
 
+**FPGA & Digital Design**
+- VHDL, finite state machines, fixed-point arithmetic
+- Intel Cyclone V (DE1-SoC), Quartus II, ModelSim, timing analysis
+
 **Automation & Industrial**
 - Siemens S7-1200 PLC
 - Measurement & instrumentation systems
@@ -40,6 +44,21 @@ My experience spans **embedded systems**, **industrial automation concepts**, an
 - Visual Studio
 - MATLAB
 - Git & GitHub
+
+---
+
+## ⚙️ Featured Project
+### [FPGA Hardware-in-the-Loop: DC Motor Simulation and PI Speed Control](https://github.com/ikhlaskenn/fpga-hil-dc-motor)
+
+A DC motor and its PI speed controller, both running in real time on an **Intel Cyclone V FPGA** (DE1-SoC).
+
+**Key points:**
+- State-space motor model, discretized at 100 µs and computed in **Q12.20 fixed point** (VHDL)
+- PI controller with saturation and **anti-windup**
+- VHDL verified **bit-exact** against a MATLAB reference model (ModelSim testbench)
+- 2 % of the FPGA logic, 50 MHz with +9.1 ns timing slack
+
+**Tools:** VHDL · Quartus II · ModelSim · MATLAB
 
 ---
 

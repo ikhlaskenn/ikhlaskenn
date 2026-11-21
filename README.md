@@ -1,123 +1,128 @@
 # Hi, I’m Ikhlass 👋
 
-⚡ Electrical Engineer | Automation & Instrumentation  
-📍 Budapest, Hungary | Morocco  
-💡 Embedded Systems • Industrial Automation • Software Engineering
+⚡ Electrical Engineer | Automation & Instrumentation
+🎓 MSc student in Electronics, Electrical Energy and Automatic Control (E3A), Université Paris-Saclay
+📍 Paris, France
+💡 Embedded Systems • FPGA & Digital Design • Industrial Automation
 
 ---
 
 ## 👩‍💻 About Me
-I am an **Electrical Engineer** with a background in **Automation and Instrumentation**, focused on building practical engineering solutions that combine **hardware, software, and data**.
 
-My experience spans **embedded systems**, **industrial automation concepts**, and **software-based applications**, with an emphasis on clean architecture, reliability, and real-world usability.
+I hold an engineering degree in Electrical Engineering from **Óbuda University** (Budapest), with a specialization in **Automation and Instrumentation**, and I am currently completing an **MSc in E3A at Université Paris-Saclay**.
+
+My work sits where hardware meets software: embedded firmware, real-time control on FPGA, and the measurement and instrumentation side that tells you whether any of it actually works. I care about designs that are verified rather than assumed — bit-exact comparisons against a reference model, timing closure, honest limitations written down.
 
 ---
 
 ## 🧠 Technical Skills
 
 **Embedded & Hardware**
-- ATmega64 (ADC, PWM, UART, LCD, Timers)
-- ESP32 (Bluetooth communication, sensor integration)
-- Sensors: temperature, IMU (MPU6050), analog & digital sensors
+- ATmega64 / ATmega328P (ADC, PWM, UART, LCD, timers), STM32, ESP32
+- Serial buses: UART, I²C; notions of Modbus and CAN
+- Sensors: temperature, IMU (MPU6050), analog and digital sensing
 - Motor drivers (L298N), differential drive systems
+- Schematic capture in Altium Designer
 
 **FPGA & Digital Design**
 - VHDL, finite state machines, fixed-point arithmetic
-- Intel Cyclone V (DE1-SoC), Quartus II, ModelSim, timing analysis
+- Intel Cyclone V (DE1-SoC), Quartus II, ModelSim, static timing analysis
+- Nios II soft processor, Qsys system integration
 
-**Automation & Industrial**
+**Automation & Instrumentation**
 - Siemens S7-1200 PLC
-- Measurement & instrumentation systems
-- Signal conditioning and industrial sensing fundamentals
+- Two semesters of measurement coursework: oscilloscopes, instrumentation, functional electrical testing
+- Signal conditioning, signal and image processing
+- V-model development cycle
 
 **Software & Programming**
-- C / Embedded C
-- C# (.NET)
-- **ASP.NET Core & Orchard Core CMS**
-- Desktop and modular web application development
-- SQLite database integration
-- PDF & Excel report generation
-- MATLAB / Simulink (signal processing, measurements)
+- C / Embedded C, Python, Bash
+- C# (.NET), ASP.NET Core & Orchard Core CMS
+- SQLite integration, PDF and Excel report generation
+- MATLAB / Simulink
 
 **Tools**
-- Microchip Studio
-- Visual Studio
-- MATLAB
-- Git & GitHub
+- Quartus II · ModelSim · Microchip Studio · Arduino IDE · Visual Studio · MATLAB · Altium Designer · Git
 
 ---
 
 ## ⚙️ Featured Project
+
 ### [FPGA Hardware-in-the-Loop: DC Motor Simulation and PI Speed Control](https://github.com/ikhlaskenn/fpga-hil-dc-motor)
 
-A DC motor and its PI speed controller, both running in real time on an **Intel Cyclone V FPGA** (DE1-SoC).
+A DC motor and its PI speed controller, both running in real time on an **Intel Cyclone V FPGA** (DE1-SoC) with no external hardware.
 
-**Key points:**
-- State-space motor model, discretized at 100 µs and computed in **Q12.20 fixed point** (VHDL)
-- PI controller with saturation and **anti-windup**
-- VHDL verified **bit-exact** against a MATLAB reference model (ModelSim testbench)
-- 2 % of the FPGA logic, 50 MHz with +9.1 ns timing slack
+- State-space motor model discretized at 100 µs, computed in **Q12.20 fixed point** in VHDL
+- PI controller with output saturation and **integral anti-windup**
+- VHDL verified **bit-exact** against a MATLAB reference model (ModelSim testbench, maximum error = 0)
+- 2 % of the FPGA logic, 50 MHz with +9.1 ns setup slack
 
-**Tools:** VHDL · Quartus II · ModelSim · MATLAB
+`VHDL` · `Quartus II` · `ModelSim` · `MATLAB`
+
+---
+
+## 🔐 [Secure Access Control System Using Facial Recognition](https://github.com/ikhlaskenn/esp32cam-face-access-control)
+
+A door lock that opens on a face. An **ESP32-CAM** performs detection, feature extraction and matching entirely on-device, then drives a relay that releases a 12 V electromagnetic solenoid lock.
+
+- Fully embedded biometric pipeline — no cloud, templates stay in the module's flash
+- Non-blocking unlock timer and fail-secure power-up state
+- Hardware integration: relay isolation between 3.3 V logic and the 12 V lock
+- Documented limitations: 2D spoofing, lighting sensitivity, and the privacy implications of biometric data
+
+`C/C++` · `ESP32-CAM` · `Arduino` · `Embedded Vision`
 
 ---
 
 ## 🚗 Bachelor Thesis
+
 ### [Gesture-Controlled Robotic Car](https://github.com/ikhlaskenn/gesture-controlled-robotic-car)
 
-A robotic vehicle controlled using **hand gestures** through a wearable transmitter.
+A robotic vehicle driven by **hand gestures** through a wearable transmitter.
 
-**Key technologies:**
-- ESP32 microcontrollers
+- ESP32 microcontrollers with Bluetooth communication
 - IMU-based gesture recognition
-- Bluetooth communication
-- Real-time motor control using an L298N driver
+- Real-time motor control via an L298N driver
 
-The project focuses on **real-time performance**, **system robustness**, and **reliable embedded communication**.
-
----
-
-## 🚧 In-Progress Project
-### 🌐 ASP.NET Orchard Core Web Application
-A modular web application developed using **ASP.NET Core** and **Orchard Core CMS**.
-
-**Current focus:**
-- Custom content types and modules
-- Role-based user authentication
-- Admin dashboard configuration
-- Modular and scalable architecture
-
-This project is actively developed and continuously improved.
+`ESP32` · `IMU` · `Bluetooth` · `Embedded C`
 
 ---
 
 ## 📂 Other Projects
-- 🔋 **Energy Consumption Forecasting Tool (C#)**  
-  Software application designed to estimate and analyze household energy consumption using simulated data, with automatic **PDF and Excel report generation** and **SQLite database storage**.
 
-- 🔐 **Secure Access Control System (Facial Recognition)**  
-  Prototype project focused on secure authentication concepts.
+### [Energy Consumption Analytics and Reporting Tool](https://github.com/ikhlaskenn/energy-consumption-forecast-csharp)
+A C# desktop application modelling household appliances as objects, storing consumption sessions in **SQLite**, and exporting PDF and Excel reports. Built around an abstract `Device` base class, so a new appliance is a new class and nothing else changes.
+
+`C#` · `.NET` · `SQLite` · `iTextSharp` · `ClosedXML`
+
+### [ASP.NET Orchard Core Web Application](https://github.com/ikhlaskenn/aspnet-orchard-core-app)
+A modular web application built on **ASP.NET Core** and **Orchard Core CMS**: custom content types and modules, role-based authentication, admin dashboard configuration.
+
+`C#` · `ASP.NET Core` · `Orchard Core`
 
 ---
 
 ## 🏭 Professional Experience
-- Industrial internship in cable manufacturing (production, quality, maintenance)
-- Practical exposure to industrial testing, traceability, and maintenance workflows
-- Experience with SAP-based process and order management systems
+
+- Quality and electrical testing internship in automotive cable manufacturing — production testing, traceability, ISO 9001 context
+- Automation and maintenance internship at ONCF (railways), including equipment quotations and bills of materials
+- International client project management at Bio-Rad, with SAP and Salesforce
 
 ---
 
 ## 🌍 Languages
-- English – Professional  
-- French – Professional  
-- Arabic – Native  
+
+- **Arabic** — Native
+- **French** — Professional
+- **English** — Professional (engineering degree taught in English)
 
 ---
 
 ## 📫 Contact
-- 💼 LinkedIn: *(add your LinkedIn link here)*  
-- 📧 Email: *(available on request)*  
+
+- 💼 [linkedin.com/in/ikhlass-kennich](https://www.linkedin.com/in/ikhlass-kennich)
+- 📧 ikhlass.kennich66@gmail.com
 
 ---
 
-⭐ This GitHub profile is actively maintained and updated with engineering projects and technical documentation.
+⭐ Actively maintained, with new engineering projects and technical documentation added as they are completed.

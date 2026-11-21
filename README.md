@@ -63,7 +63,7 @@ A DC motor and its PI speed controller, both running in real time on an **Intel 
 ---
 
 ## 🚗 Bachelor Thesis
-**Gesture-Controlled Robotic Car**
+### [Gesture-Controlled Robotic Car](https://github.com/ikhlaskenn/gesture-controlled-robotic-car)
 
 A robotic vehicle controlled using **hand gestures** through a wearable transmitter.
 
